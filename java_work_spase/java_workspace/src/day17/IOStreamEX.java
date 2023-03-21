@@ -1,0 +1,48 @@
+package day17;
+
+public class IOStreamEX {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/*
+		 * 스트림 : 단방향의 데이터 흐름
+		 * 
+		 * 데이터의 입력값에 따른 구분
+		 * 바이트스트림 = 기본
+		 * 문자스트림 = 2바이트 이상 문자를 하나로 묶어서 사용
+		 * 바이트
+		 * 입력 InputStream ; FileInputStream BufferedInputStream DataInputStream ......
+		 * 출력 OutputStream ; FileOutputStream PrintOutputStream BufferedOutputStream .......
+		 * 
+		 * 문자
+		 * 입력 Reader ; FileReader BufferedReader InputStreamReader ......
+		 * 출력 Writer ; FileWriter PrintWriter BufferedWriter ......
+		 * 
+		 * ------------
+		 * 하는 일에 따른 구분
+		 * 기반스트림 = 대상에서 직접 자료를 읽고 쓰는 기능이 있음
+		 * 보조스트림 = 직접읽고쓰는 기능은 없지만 추가적인 기능을 더해주는 스트림
+		 * 
+		 * 기반 FileInputStream FileOutputStream FileReader FileWriter ......
+		 * 보조 BufferedInputStream BufferedOutputStream InputStreamReader ......
+		 *
+		 */
+		//표준 출력스트림
+		System.out.println();
+		
+		//표준출력스트림
+		//System.in.read();
+		
+		//표준에러출력스트림
+		System.err.println();
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

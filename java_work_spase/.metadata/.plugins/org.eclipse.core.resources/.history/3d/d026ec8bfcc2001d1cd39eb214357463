@@ -1,0 +1,52 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+	
+	private ArrayList<Product> pr = new ArrayList<Product>(); 
+	private ArrayList<String> orderMenu = new ArrayList<>();
+	private ArrayList<Integer> orderCount = new ArrayList<>();
+	
+	
+	public void addMenu(Scanner sc) {
+		System.out.println("추가할 제품명을 입력해 주십시오");
+		String menu = sc.next();	
+		System.out.println("가격을 입력해 주십시오");
+		int price = sc.nextInt(); 
+		pr.add(new Product(menu,price));
+	}
+	
+	public void printMenu() {
+		for(int i=0;i<pr.size();i++) {
+			pr.get(i).print();
+		}
+	}
+	
+	public void order(Scanner sc) {
+		System.out.println("원하시는 제품의 이름을 입력하십시오");
+		String menu=sc.next();
+		System.out.println("원하시는 제품의 수량을 입력하십시오");
+		int price = sc.nextInt();
+		int index=-1;
+		
+		for(int i =0;i<orderMenu.size();i++) {
+			if(menu.equals(orderMenu.get(i))) {
+				orderCount.set(i, orderCount.get(i)+price);
+				index=i;
+			}			
+		}
+		if(index==-1) {
+			orderMenu.add(menu);
+			orderCount.add(price);
+		}
+		
+		
+	}
+	public void orderChech() {
+		for(int i =0;i<orderMenu.size();i++) {
+			System.out.println(orderMenu.get(i)+" "+orderCount.get(i));
+		}
+	}
+}

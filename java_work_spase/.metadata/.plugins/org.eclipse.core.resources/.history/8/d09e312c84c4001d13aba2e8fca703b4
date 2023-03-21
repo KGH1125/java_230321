@@ -1,0 +1,25 @@
+package day16;
+
+import java.util.ArrayList;
+
+public class Stream {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*
+		 * 문자열리스트 -스트림으로 변환 후 정렬 출력
+		 */
+	
+		ArrayList<String> arr = new ArrayList<String>();
+		arr.add("마라감자탕");
+		arr.add("호박감자");
+		arr.add("호박고구마");
+		arr.add("당근케잌");
+		arr.add("가지무침");
+		arr.stream().sorted().forEach(a-> System.out.print(a+" "));
+		arr.stream().filter(s->s.length()>5).forEach(a->System.out.print(a+" "));
+		
+	}
+
+}

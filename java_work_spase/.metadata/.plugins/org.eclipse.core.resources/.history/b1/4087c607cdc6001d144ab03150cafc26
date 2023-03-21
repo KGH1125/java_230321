@@ -1,0 +1,22 @@
+package day17;
+
+import java.io.File;
+
+public class FileObjectEx01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * 파일이 가지고 있는 정보를 출력
+		 * D:\java_work_spase\java_workspace
+		 */
+		File f = new File("D:\\java_work_spase\\java_workspace\\out.txt");
+		System.out.println(f.getName());//파일이름
+		System.out.println(f.getPath());//경로+이름
+		System.out.println(f.getAbsolutePath()); //절대경로
+		
+		
+
+	}
+
+}

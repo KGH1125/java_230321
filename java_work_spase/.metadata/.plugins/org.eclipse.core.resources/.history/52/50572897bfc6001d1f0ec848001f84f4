@@ -1,0 +1,16 @@
+package play;
+
+public class RanMaker {
+	
+	
+	public boolean MakeRan (int all, int win) {
+		
+		boolean end = false;
+		int winNum= (int)((Math.random())*all)+1;
+		int userNum= (int)((Math.random())*all)+1;
+		
+		
+		
+		return end;
+	}
+}

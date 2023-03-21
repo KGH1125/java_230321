@@ -1,0 +1,36 @@
+package day17;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class BufferedReaderEx02 {
+
+	public static void main(String[] args) throws IOException {
+		/*
+		 * 버퍼리더 프린터라이트 파일복사후 객체생성
+		 */
+		BufferedReader bf = new BufferedReader(new FileReader("out.txt"));
+		PrintWriter pw = new PrintWriter("out2.txt");
+
+		while (true) {
+			String a = bf.readLine();
+			if (a == null) {
+				break;
+			} else {
+				pw.println(a);
+			}
+		}
+		
+
+		if(pw!=null) {
+			pw.close();			
+		}
+		if(bf!=null) {
+			bf.close();
+		}
+	}
+
+}

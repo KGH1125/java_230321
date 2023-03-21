@@ -1,0 +1,11 @@
+package 수강관리_프로그램;
+
+public interface program {
+	
+	void printtudentList();
+	void studentAdd();
+	abstract void studentSerch();
+	abstract void studentSubAdd();
+	abstract void studentSubDel();
+
+}

@@ -1,0 +1,71 @@
+package day18;
+
+class Bank {
+	private int money = 10000;
+
+	public void in(int inM) {
+		int m = money;
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		setMoney(m + inM);
+
+	}
+
+	public void out(int outM) {
+		int m = money;
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		setMoney(m - outM);
+	}
+
+	public int getMoney() {
+		return money;
+	}
+
+	public void setMoney(int money) {
+		this.money = money;
+	}
+
+}
+
+class Hong extends Thread {
+	public void run() {
+		System.out.println("입금시작");
+		SyncMain.myBank.in(3000);
+		System.out.println("입금완료"+SyncMain.myBank.getMoney());
+		
+	}
+
+}
+
+class Hong2 extends Thread {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		super.run();
+		System.out.println("출금시작");
+		SyncMain.myBank.out(3000);
+		System.out.println("출금완료"+SyncMain.myBank.getMoney());
+	}
+
+}
+
+public class SyncMain {
+
+	public static Bank myBank = new Bank();
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

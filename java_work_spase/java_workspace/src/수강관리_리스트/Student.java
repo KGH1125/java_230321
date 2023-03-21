@@ -1,0 +1,91 @@
+package 수강관리_리스트;
+
+import java.util.ArrayList;
+
+public class Student {
+
+	private String stuName;
+	private String stuBirthday;
+	private String stuID;
+	private String stuHbu;
+	private String stuHgoa;
+	private ArrayList<Subject> subList = new ArrayList<Subject>();
+
+	public Student() {
+	}
+
+	public Student(String stuName) {
+		this.stuName = stuName;
+	}
+
+	public Student(String stuName, String stuBirthday, String stuID, String stuHbu, String stuHgoa) {
+		this.stuName = stuName;
+		this.stuBirthday = stuBirthday;
+		this.stuID = stuID;
+		this.stuHbu = stuHbu;
+		this.stuHgoa = stuHgoa;
+	}
+
+	public void printStudentOne() {
+		System.out.printf("이름:%s 생년월일:%s ID:%s 학부:%s 학과:%s%n", stuName, stuBirthday, stuID, stuHbu, stuHgoa);
+	}
+
+	public void printStudent() {
+		System.out.printf("이름:%s 생년월일:%s ID:%s 학부:%s 학과:%s%n", stuName, stuBirthday, stuID, stuHbu, stuHgoa);
+		for (int i = 0; i < subList.size(); i++) {
+			subList.get(i).subPrint();
+		}
+
+	}
+
+	public String getStuName() {
+		return stuName;
+	}
+
+	public void setStuName(String stuName) {
+		this.stuName = stuName;
+	}
+
+	public String getStuBirthday() {
+		return stuBirthday;
+	}
+
+	public void setStuBirthday(String stuBirthday) {
+		this.stuBirthday = stuBirthday;
+	}
+
+	public String getStuID() {
+		return stuID;
+	}
+
+	public void setStuID(String stuID) {
+		this.stuID = stuID;
+	}
+
+	public String getStuHbu() {
+		return stuHbu;
+	}
+
+	public void setStuHbu(String stuHbu) {
+		this.stuHbu = stuHbu;
+	}
+
+	public String getStuHgoa() {
+		return stuHgoa;
+	}
+
+	public void setStuHgoa(String stuHgoa) {
+		this.stuHgoa = stuHgoa;
+	}
+
+	public ArrayList<Subject> getSubList() {
+		return subList;
+	}
+
+	public void setSubList(ArrayList<Subject> subList) {
+		this.subList = subList;
+	}
+
+	
+
+}

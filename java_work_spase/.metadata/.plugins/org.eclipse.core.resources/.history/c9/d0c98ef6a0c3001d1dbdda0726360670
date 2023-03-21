@@ -1,0 +1,43 @@
+package 수강관리_리스트;
+
+import java.util.Scanner;
+
+import 수강관리_프로그램.program;
+
+public class StudentManage implements program{
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		
+		
+	}
+
+	@Override
+	public void insertStudent(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void serchStudent(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void registerSubject(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteSubject(Scanner sc) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
+	
+}

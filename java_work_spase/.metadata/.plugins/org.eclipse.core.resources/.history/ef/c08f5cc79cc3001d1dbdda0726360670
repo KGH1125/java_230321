@@ -1,0 +1,36 @@
+package day15;
+
+public class StringBufferEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * String : 문자열
+		 * StringBuffer : 문자열을 추가하거나 변경할 때 사용
+		 * append : 문자열을 끝에 추가
+		 * insert : 특정 위치에 문나 추가
+		 * 
+		 * 
+		 */
+		
+		StringBuffer sb = new StringBuffer();
+		sb.append("hellow");
+		sb.append(" ");
+		sb.append("java");
+		
+		System.out.println(sb);//원래는 주소값이나오는데 안나오네(?)
+		System.out.println(sb.toString());
+		
+		String a = sb.toString();
+		System.out.println(a);
+		
+		String str ="";
+		str+="hellow";
+		str+=" ";
+		str+="coco";
+		System.out.println(str);
+		
+		
+	}
+
+}

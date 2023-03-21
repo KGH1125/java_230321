@@ -1,0 +1,18 @@
+package play;
+
+public class RanMaker {
+
+	public boolean MakeRan(int all, int win) {
+
+		boolean end = false;
+		int num = (int) ((Math.random()) * all) + 1;
+
+		for (int i = 0; i < win; i++) {
+			if (num == i) {
+				end = true;
+			}
+		}
+
+		return end;
+	}
+}

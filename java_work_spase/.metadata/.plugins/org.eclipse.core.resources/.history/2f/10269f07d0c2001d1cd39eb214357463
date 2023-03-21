@@ -1,0 +1,105 @@
+package 수강관리_프로그램;
+
+public class student {
+	private int count=0;
+	private int 학번;
+	private String name;
+	private int birthday;
+	private String 학부;
+	private String 학과;
+	private subject[] subList;
+	
+	//subject[] sb = new subject[count];
+	
+	public int get학번() {
+		return 학번;
+	}
+
+	public void set학번(int 학번) {
+		this.학번 = 학번;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(int birthday) {
+		this.birthday = birthday;
+	}
+
+	public String get학부() {
+		return 학부;
+	}
+
+	public void set학부(String 학부) {
+		this.학부 = 학부;
+	}
+
+	public String get학과() {
+		return 학과;
+	}
+
+	public void set학과(String 학과) {
+		this.학과 = 학과;
+	}
+
+	
+	public void stdprint() {
+		System.out.println("이름 : " +name+" 학번 : "+학번);
+		System.out.println("학부 : " +학부+" 학과 : "+학과);
+	}
+	
+	public void subprint() {
+		if(count==0) {
+			System.out.println("수강중인 과목이 없습니다");
+		}
+		for(int i=0;i<count;i++) {
+			System.out.println(subList[i]);
+		}
+	}
+	
+	
+	public void addSub(subject subName) {
+		
+		if(count==subList.length) {
+			subject[] tmp = new subject[subList.length+5];
+			System.arraycopy(subList, 0, tmp, 0,subList.length);
+			subList = tmp;
+		}
+		subList[count]= subName;
+		count++;
+		
+	}
+
+	public void delSub(String subName) {
+		int index = -1;
+		if(subName==null) {return;}
+		for(int i=0; i<count ; i++) {
+			if(subList[i].getSubName().equals(subName)) {
+				index =1;
+				break;
+			}
+		}
+		if(index==-1) {
+			return;
+		}
+		for(int i=index;i<count-1;i++ ) {
+			subList[i]=subList[i+1];
+			subList[count-1]=null;
+		}
+	
+	}
+	
+	
+	
+	
+	
+}

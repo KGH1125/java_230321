@@ -1,0 +1,32 @@
+package day15;
+
+public class RegularExpressionEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//정규 표현식
+		//문자형식검증
+		/*
+		 * [a-zA-Z]:영문 대소문자 가능
+		 * \d : 숫자 가능 
+		 * \w : 숫자 알파벳 전부가능
+		 * . : 문자 한개
+		 * ? : 문자한개 없어도됨 있어도됨
+		 * * : 문자 여러개 없어도됨 있어도됨 
+		 * {n,} : n자리 이상 n=숫자
+		 * ^ $ : 시작^ 끝$
+		 * 
+		 * (02|010)-\d{3,4}-\d{4}  
+		 * 
+		 * 
+		 */
+		
+		String[] strArr = {"bat","baby","car","cd","apple","disk","count","banana","pink"};
+	
+		for(int i=0;i<strArr.length;i++) {
+			System.out.print(strArr[i]);
+			
+		}
+	}
+
+}

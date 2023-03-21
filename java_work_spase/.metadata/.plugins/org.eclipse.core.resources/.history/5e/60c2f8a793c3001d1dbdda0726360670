@@ -1,0 +1,38 @@
+package day15;
+
+import java.math.BigDecimal;
+
+public class BigDecimalEX {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * BigDecimal : java에서 숫자를 정밀하게 저장/표현하기위한 클래스
+		 * 돈, 소수점 정밀한 계산이 필요한 경우
+		 * 속도가 느림
+		 * 
+		 */
+		
+		BigDecimal bd = new BigDecimal("1000.1234");
+		BigDecimal bd1 = new BigDecimal("1000.1234");
+		BigDecimal bd2 = new BigDecimal("100");
+		
+		//비교
+		System.out.println(bd.equals(bd1));		//같으면 T 다르면 F
+		System.out.println(bd.compareTo(bd2));	//크면 1 같으면 0 작으면 -1
+		
+		//사칙연산
+		System.out.println(bd.add(bd2));		//더하기
+		System.out.println(bd.subtract(bd2));	//빼기
+		System.out.println(bd.multiply(bd2));	//곱하기
+		System.out.println(bd.divide(bd2));		//나누기
+		System.out.println(bd.remainder(bd2));	//나머지
+		
+		//max min
+		System.out.println(bd.max(bd2));
+		System.out.println(bd.min(bd2));
+		
+		
+	}
+
+}

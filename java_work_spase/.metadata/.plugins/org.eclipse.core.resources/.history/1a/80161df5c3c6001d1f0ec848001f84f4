@@ -1,0 +1,13 @@
+package day17;
+
+import java.io.PrintWriter;
+
+public class PrintWriterEx01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintWriter pw = new PrintWriter(System.out);
+		pw.print("헬로");
+	}
+
+}

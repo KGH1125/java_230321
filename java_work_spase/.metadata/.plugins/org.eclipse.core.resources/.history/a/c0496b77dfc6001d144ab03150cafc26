@@ -1,0 +1,21 @@
+package day17;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashMap;
+
+public class BufferedReadEx03 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		BufferedReader br =new BufferedReader(new FileReader("out.txt"));
+		
+		String a= br.readLine();
+		String b = a.substring(a.indexOf(" ")+1);
+		
+		System.out.println(b);
+	}
+
+}

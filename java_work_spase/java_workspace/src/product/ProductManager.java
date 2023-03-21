@@ -1,0 +1,109 @@
+package product;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ProductManager {
+
+	private ArrayList<Product> pr = new ArrayList<Product>();
+	private ArrayList<String> orderMenu = new ArrayList<>();
+	private ArrayList<Integer> orderCount = new ArrayList<>();
+
+	public void addMenu(Scanner sc) {
+		
+		System.out.println("추가/수정할 제품명을 입력해 주십시오");
+		String menu = sc.next();
+		int index =-1;
+		for(int i = 0; i < pr.size(); i++) {
+			if(menu.equals(pr.get(i).getMenu())) {
+				index=i;
+				System.out.println("수정하시겠습니까?(y/n)");
+				String y = sc.next();
+				if(y.equals("y")) {
+					System.out.println("수정 할 가격을 입력해 주십시오");
+					int price = sc.nextInt();
+					pr.set(i, new Product(menu, price));
+				}
+			}
+			
+		}
+		if(index==-1) {
+			System.out.println("가격을 입력해 주십시오");
+			int price = sc.nextInt();
+			pr.add(new Product(menu, price));			
+		}
+		
+	}
+
+	public void deleteMenu(Scanner sc) {
+		System.out.println("제거할 제품명을 입력해 주십시오");
+		String menu = sc.next();
+		int index =-1;
+		for(int i = 0; i < pr.size(); i++) {
+			if(menu.equals(pr.get(i).getMenu())) {
+				pr.remove(i);
+				index=i;
+				System.out.println("삭제되었습니다");
+			}
+		}
+		if(index==-1) {
+			System.out.println("해당하는 제품이 없습니다!");
+		}
+	}
+	
+	public void printMenu() {
+		for (int i = 0; i < pr.size(); i++) {
+			pr.get(i).print();
+		}
+	}
+
+	public void order(Scanner sc) {
+		
+		
+		if (pr.size() == 0) {
+			System.out.println("메뉴가 없습니다!");
+		} else {
+			System.out.println("원하시는 제품의 이름을 입력하십시오");
+			String menu = sc.next();
+			int index1 = -1;
+			for (int i = 0; i < pr.size(); i++) {
+				if (!pr.get(i).getMenu().equals(menu)) {
+					index1 = i;
+				}
+			}
+			if (index1 == -1) {
+				System.out.println("원하시는 제품의 수량을 입력하십시오");
+				int price = sc.nextInt();
+				int index = -1;
+
+				for (int i = 0; i < orderMenu.size(); i++) {
+					if (menu.equals(orderMenu.get(i))) {
+						orderCount.set(i, orderCount.get(i) + price);
+						index = i;
+					}
+				}
+				if (index == -1) {
+					orderMenu.add(menu);
+					orderCount.add(price);
+				}
+
+			} else {
+				System.out.println("제품이 리스트에 없습니다!");
+			}
+
+		}
+		
+		
+		
+	}
+
+	public void orderChech() {
+		int price = 0;
+		for (int i = 0; i < orderMenu.size(); i++) {
+			System.out.println(orderMenu.get(i) + " " + orderCount.get(i) + "개");
+			price = price + (pr.get(i).rePrise(orderMenu.get(i)) * orderCount.get(i));
+		}
+		System.out.println("총액:" + price);
+
+	}
+}

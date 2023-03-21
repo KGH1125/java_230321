@@ -1,0 +1,36 @@
+package day15;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class WordManager {
+
+	
+	/*
+	 * 추가
+	 * 제거
+	 * 수정
+	 * 검색
+	 * 출력
+	 * 
+	 */
+	private ArrayList<Word> wordList =new ArrayList<Word>();
+	
+	public void addWord(Scanner sc) {
+		System.out.println("추가할 단어를 입력해 주십시오");
+		String addw =sc.next();
+		System.out.println("단어의 뜻을 입력해 주십시오");
+		String addm = sc.next();
+		System.out.println("단어:"+addw+" 뜻:"+addm+" 을 등록하시려면 y를 눌러주세요");
+		System.out.println("취소하려면 아무키나 누르세요");
+		String ch = sc.next();
+		if(ch.equals("y")||ch.equals("Y")) {
+			wordList.add(new Word(addw,addm));
+			System.out.println("단어장에 추가되었습니다");
+		}else {
+			System.out.println("취소되었습니다");
+		}	
+	}
+	
+	
+}

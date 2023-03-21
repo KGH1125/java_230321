@@ -1,0 +1,12 @@
+package play;
+
+public class Play {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		nextSin ns = new nextSin();
+		ns.ns();
+		
+	}
+
+}

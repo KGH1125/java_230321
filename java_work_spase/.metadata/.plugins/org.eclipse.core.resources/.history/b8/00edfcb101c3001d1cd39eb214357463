@@ -1,0 +1,61 @@
+package product;
+
+import java.util.Scanner;
+
+public class Main {
+
+	
+	public static void main(String[] args) {
+		
+		/*
+		 * Product class = 메뉴명,가격
+		 * Order class extends Product = 주문 수량 ,합계 (total)
+		 * ProductManager 메뉴등록 리스트 주문 리스트
+		 * -메뉴추가
+		 * -메뉴리스트 출력
+		 * -제품주문
+		 * -주문내역확인
+		 * Main 메뉴 이용하여 출력
+		 * 
+		 */
+		ProductManager pm = new ProductManager();
+		Scanner sc = new Scanner(System.in);
+		int ch=0;
+		do {
+			System.out.println();
+			System.out.println("1.메뉴추가");
+			System.out.println("2.메뉴리스트 출력");
+			System.out.println("3.제품주문");
+			System.out.println("4.주문내역확인");
+			System.out.println("5.종료");
+			ch=sc.nextInt();
+			switch(ch) {
+			case 1 :
+				pm.addMenu(sc);
+				break;
+			case 2 :
+				pm.printMenu();
+				break;
+			case 3 :
+				pm.order(sc);
+				break;
+			case 4 :
+				pm.orderChech();
+				break;
+			case 5 :
+				break;
+			default:
+			System.out.println("잘못 입력하셨습니다.");
+			}
+			
+		}while(ch!=5);
+		System.out.println("종료되었습니다.");
+		
+		
+		
+		
+		sc.close();
+		
+		
+	}
+}

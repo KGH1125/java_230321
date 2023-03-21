@@ -1,0 +1,21 @@
+package day17;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+
+public class InputStreamEx01 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		byte[] b =new byte[1024];
+		FileInputStream f = new FileInputStream("out.text");
+		f.read(b);
+		String data = new String(b);
+		System.out.println(data);
+		f.close();
+
+	}
+
+}

@@ -1,0 +1,61 @@
+package 수강관리_프로그램;
+
+import java.util.Scanner;
+
+public class studentManager implements program {
+	private int countSt;
+	private student[] st = new student[5];
+
+	@Override
+	public void printStudent() {
+		// TODO Auto-generated method stub
+		for (int i = 0; i < countSt; i++) {
+			// (st[i]);
+		}
+	}
+
+	@Override
+	public void insertStudent(Scanner sc) {
+		// TODO Auto-generated method stub
+		System.out.println("이름 : ");
+		String name = sc.next();
+		System.out.println("학번 : ");
+		int 학번 = sc.nextInt();
+		System.out.println("주민번호 : ");
+		int birthday = sc.nextInt();
+		System.out.println("학부 : ");
+		String faculy = sc.next();
+		System.out.println("학과 : ");
+		String major = sc.next();
+		System.out.println("----------");
+		student s = new student(학번, name, birthday, faculy, major);
+		if (countSt == st.length) {
+			student[] tmp = new student[st.length + 5];
+			System.arraycopy(st, 0, tmp, 0, st.length);
+			st = tmp;
+		}
+
+		st[countSt] = s;
+		countSt++;
+
+	}
+
+	@Override
+	public void serchStudent(Scanner sc) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void registerSubject(Scanner sc) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deleteSubject(Scanner sc) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

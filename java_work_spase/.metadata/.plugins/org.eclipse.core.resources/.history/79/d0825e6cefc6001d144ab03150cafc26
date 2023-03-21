@@ -1,0 +1,57 @@
+package day15;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class WordMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		String ch ="";
+		WordManager wm = new WordManager();
+		
+		wm.exWord();
+		do {
+			System.out.println("--------------");
+			System.out.println("1.단어추가");
+			System.out.println("2.단어제거");
+			System.out.println("3.단어수정");
+			System.out.println("4.단어검색");
+			System.out.println("5.단어출력");
+			System.out.println("6.종료");
+			System.out.println("7.파일로 출력");
+			System.out.println(">>");
+			
+			ch = sc.next();
+
+			switch (ch) {
+			case "1":
+				wm.addWord(sc);
+				break;
+			case "2":		
+				wm.delWord(sc);
+				;
+				break;
+			case "3":
+				wm.corWord(sc);
+				break;
+			case "4":
+				wm.serchWord(sc);
+				break;
+			case "5":
+				wm.printWrod();
+				break;
+			case "6":
+				break;
+			case "7":
+				wm.printTxt();;
+				break;
+			default:
+				System.out.println("잘못 입력하셨습니다.");
+			}
+
+		} while (!ch.equals("6"));
+		System.out.println("종료되었습니다.");
+	}
+
+}

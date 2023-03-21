@@ -1,0 +1,26 @@
+package play;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class RanMaker {
+	
+	
+	public boolean MakeRan (int all, int win) {
+		
+		boolean end = false;
+		Set<Integer> set =new HashSet<Integer>();
+		for(int i= 1; i<win; i++) {
+			set.add(i);
+		}
+		
+		for(int a : set) {
+			
+		}
+		int userNum= (int)((Math.random())*all)+1;
+		
+		
+		
+		return end;
+	}
+}

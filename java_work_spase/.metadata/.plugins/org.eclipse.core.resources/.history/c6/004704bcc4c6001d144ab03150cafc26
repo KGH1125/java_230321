@@ -1,0 +1,18 @@
+package day17;
+
+import java.io.PrintWriter;
+
+public class PrintWriterEx01 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintWriter pw = new PrintWriter(System.out);
+		String a ="헬로";
+		pw.print(a);
+		pw.println();
+		pw.printf("%.99f",Math.PI);
+		pw.flush();//잔류 바이트 버퍼를 비움
+		pw.close();
+	}
+
+}
